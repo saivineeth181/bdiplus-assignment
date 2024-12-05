@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from app import models, schemas, crud, database
 
-models.Base.metadata.create_all(bind=database.engine)  # Create SQLite database tables
+models.Base.metadata.create_all(bind=database.engine)
 
 app = FastAPI()
 
@@ -11,7 +11,7 @@ app = FastAPI()
 # Enable CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Replace with your frontend's origin
+    allow_origins=["http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
